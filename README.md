@@ -1,2 +1,3 @@
 # CodingStrategy
-Coding Strategy Repository
+
+A description of this package.
