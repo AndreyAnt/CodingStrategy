@@ -67,11 +67,11 @@ public struct NestedKey<T: Decodable>: Decodable {
 //: # NestableCodingKey
 /// Use this instead of `CodingKey` to annotate your `enum CodingKeys: String, NestableCodingKey`.
 /// Use a `/` to separate the components of the path to nested keys
-protocol NestableCodingKey: CodingKey {
+public protocol NestableCodingKey: CodingKey {
     var path: [String] { get }
 }
 
-extension NestableCodingKey where Self: RawRepresentable, Self.RawValue == String {
+public extension NestableCodingKey where Self: RawRepresentable, Self.RawValue == String {
     init?(stringValue: String) {
         self.init(rawValue: stringValue)
     }
