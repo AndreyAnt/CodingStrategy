@@ -4,7 +4,7 @@ import XCTest
 final class CodingStrategyTests: XCTestCase {
     
     struct Fixture: Codable {
-        @CustomCoded<PalagichevStrategy> var date: Date
+        @CustomCoded<DateStrategy> var date: Date
     }
     var calendar = Calendar.current
     

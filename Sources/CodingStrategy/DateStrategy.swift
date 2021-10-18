@@ -1,5 +1,5 @@
 //
-//  PalagichevStrategy.swift
+//  DateStrategy.swift
 //  
 //
 //  Created by Andrey Antropov on 11.05.2020.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct PalagichevStrategy: CodingStrategy {
+public struct DateStrategy: CodingStrategy {
     public static func decode(_ value: String) throws -> Date {
         let date: Date?
         switch value {
