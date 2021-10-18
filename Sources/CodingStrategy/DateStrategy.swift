@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 public struct DateStrategy: CodingStrategy {
     public static func decode(_ value: String) throws -> Date {
@@ -31,7 +32,7 @@ public struct DateStrategy: CodingStrategy {
         }
     }
     
-    public static func encode(_ date: Date) -> String {
-        return DateFormatter.iso8601.string(from: date)
+    public static func encode(_ value: Date) -> String {
+        return DateFormatter.iso8601.string(from: value)
     }
 }

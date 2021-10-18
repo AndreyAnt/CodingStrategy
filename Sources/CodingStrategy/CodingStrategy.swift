@@ -2,10 +2,10 @@ import Foundation
 
 public protocol CodingStrategy {
     associatedtype InputType: Codable
-    associatedtype OutputType: Codable
+    associatedtype OutputType
 
     static func decode(_ value: InputType) throws -> OutputType
-    static func encode(_ date: OutputType) -> InputType
+    static func encode(_ value: OutputType) -> InputType
 }
 
 @propertyWrapper public struct CustomCoded<Coder: CodingStrategy>: Codable {
