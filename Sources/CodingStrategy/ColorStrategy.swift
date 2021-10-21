@@ -4,7 +4,7 @@
 //
 //  Created by andrey.antropov on 18.10.2021.
 //
-
+#if !os(macOS)
 import UIKit
 
 public struct ColorStrategy: CodingStrategy {
@@ -26,13 +26,13 @@ public struct ColorStrategy: CodingStrategy {
     private static func colorFrom(hexString: String) -> UIColor? {
         var cString:String = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
-        if (cString.hasPrefix("#")) {
+        if cString.hasPrefix("#") {
             cString.remove(at: cString.startIndex)
         }
 
-        guard (cString.count) == 6 else { return nil }
+        guard cString.count == 6 else { return nil }
 
-        var rgbValue:UInt64 = 0
+        var rgbValue: UInt64 = 0
         Scanner(string: cString).scanHexInt64(&rgbValue)
 
         return UIColor(
@@ -43,3 +43,4 @@ public struct ColorStrategy: CodingStrategy {
         )
     }
 }
+#endif

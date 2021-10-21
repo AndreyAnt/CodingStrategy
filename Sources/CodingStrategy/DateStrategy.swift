@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 public struct DateStrategy: CodingStrategy {
     public static func decode(_ value: String) throws -> Date {
