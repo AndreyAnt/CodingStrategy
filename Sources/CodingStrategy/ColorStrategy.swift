@@ -30,7 +30,7 @@ public struct ColorStrategy: CodingStrategy {
             cString.remove(at: cString.startIndex)
         }
 
-        guard (cString.count) == 6 { return nil }
+        guard (cString.count) == 6 else { return nil }
 
         var rgbValue:UInt64 = 0
         Scanner(string: cString).scanHexInt64(&rgbValue)
