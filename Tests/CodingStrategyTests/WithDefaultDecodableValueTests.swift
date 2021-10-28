@@ -12,6 +12,11 @@ final class DefaultedTests: XCTestCase {
         let decodedObject = try! JSONDecoder().decode(Fixture.self, from: jsonData)
         XCTAssertEqual(decodedObject.data, 1)
     }
+    
+    func testRawInitializer() {
+        let fixture = Fixture(data: .init(1))
+        XCTAssertEqual(fixture.data, 1)
+    }
         
     func testBadIntInput() {
         let jsonData = #"{"data": "bad_input"}"#.data(using: .utf8)!
@@ -21,6 +26,7 @@ final class DefaultedTests: XCTestCase {
 
     static var allTests = [
         ("testInt", testInt),
+        ("testRawInitializer", testRawInitializer),
         ("testBadIntInput", testBadIntInput),
     ]
 }

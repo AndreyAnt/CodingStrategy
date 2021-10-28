@@ -19,6 +19,10 @@ import Foundation
         }
     }
     
+    public init(_ wrappedValue: T) {
+        self.wrappedValue = wrappedValue
+    }
+    
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(wrappedValue)
